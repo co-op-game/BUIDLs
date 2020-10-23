@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | unity-simple-multiplayer</title>
+    <title>cO-Op | blockchain </title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
 
     <script>
-        var unityInstance = UnityLoader.instantiate("unityContainer", "Build/nomirror.json", { onProgress: UnityProgress });
+        var unityInstance = UnityLoader.instantiate("unityContainer", "Build/7.json", { onProgress: UnityProgress });
     </script>
 
     <!--not getting used
@@ -115,69 +115,157 @@
 
     not getting used-->
 
-</head>
-<body>
-    <div class="webgl-content">
-        <div id="unityContainer" style="width: 960px; height: 600px"></div>
-        <div class="footer">
-            <div class="webgl-logo"></div>
-            <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-            <div class="title">unity-simple-multiplayer</div>
+    <div class="header">
+        <a href="#default" class="logo">cO-Op</a>
+        <div class="header-right">
+
+
         </div>
     </div>
 
-    <!-- MetamaskButton/webglhtmlfront -->
 
-    <button class="enableEthereumButton" onclick="getAccount();">Enable Ethereum; Connect(); </button>
-    <h2>Account: <p id="add">"not connected"</p></h2>
-
-
-
-    <!--  Unity sends debug   -->
-    <div>
-        <input placeholder="Enter text..." id="htmlinput"><button onclick="sendBackMessage()">Send to Unity</button>
-    </div>
-    <div style="border:solid 1px black; width:200px; height:30px; text-align:center" onclick="ConnectToGame();">RED </div>
-
-    <!-------------->
+</head>
+<body style="background-color: black;>
+   
 
 
-    <script>
-
-        //for debug >>>>>>>>>>>
-        function sendBackMessage() {
-            var message = document.getElementById("htmlinput").value;
-            console.log("Sending message to Unity: " + message);
-            unityInstance.SendMessage("Local", "WebHookSpawn", message);
-        }
-        // <<<<<<<<<
-
-        async function getAccount() {
-            // connecting metamask
-            const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-            const account = accounts[0];
-            var showAccount = document.getElementById("add");
-            showAccount.innerHTML = account;
-            //  const account = "debugger";
-            ConnectToGame(account);
-        }
 
 
-        function ConnectToGame(account) {
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    Logo
+                </a>
+            </div>
+        </div>
+    </nav>
+    <main class="container">
+        <div class="row">
+            <div class="content">
+                <p>
+                    <div class="webgl-content">
+                        <!-- <div id="unityContainer" style="width: 960px; height: 600px"></div> -->
 
-            getaddress(account);
+                        <div id="unityContainer"></div>
 
-        }
+                        <div class="footer">
+                            <div class="webgl-logo"></div>
+                            <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+                            <div class="title">co-op</div>
+                        </div>
+                    </div>
+                </p>
+            </div>
+            <div class="sidebar text-center">
 
-        function getaddress(account) {
 
-            // Unity sends
-            unityInstance.SendMessage('Local', 'WebHookSpawn', account);
+                <a class="ConnectButton">
+                    <!-- MetamaskButton/webglhtmlfront -->
+                    <button class="enableEthereumButton" onclick="getAccount();">Enable Ethereum; Connect(); </button>
+                </a>
 
-        }
+                <div class="accountconnected"><p class="account"> Account: <div id="add">"not connected"</div></p></div>
+
+                <div class="sidebartext">
+                    ----------------<br />
+                    RINKEBY TESTNET ONLY<br />
+                    ----------------<br />
+                    <br />
+
+                    Enable Ability by Sending Funds to Server Pool
+                    Address between Que.
+                    <p>
+
+                        Server pool account address:
+                        <br /><br />
+                        <b>co-op.eth</b>
+                        <br /><br />
+                        0xc3534C6A6F85661c88c
+                        9551255FAE479bd50B877<br /><br />
+                        -winner takes all.<br /><br />
+                        --------------------<br />
+                    </p>
+                    <p>
+                        Server IP: 35.193.205.116
+                    </p>
+                    --------------------<br />
+                    <br />
+                    cO-Op:game:
+                    Multiplayer blockchain based verse.<br />
+                    <br />
+                    Ethonline Hackathon Proto
+                    <br />
+                    -------------------<br />
+                    <br />
+                    <!-- Add icon library -->
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+                    <!-- Add font awesome icons -->
+
+                    <a href=" https://medium.com/co-op" target="_blank" class="fa fa-medium"></a>
+                    <a href=" https://discord.gg/hZttUdB" target="_blank" <i class='fa fa-discord'></i></a>
+                    <a href="https://github.com/co-op-game" target="_blank" class="fa fa-github"></a>
+                    <a href="https://twitter.com/cO_Op_game" target="_blank" class="fa fa-twitter"></a><br />
 
 
-    </script>
+
+                </div>
+
+
+                </div>
+            </div>
+        </main>
+
+
+
+
+
+
+        <!--  Unity sends debug
+        <div>
+            <input placeholder="Enter text..." id="htmlinput"><button onclick="sendBackMessage()">Send to Unity</button>
+        </div>
+        <div style="border:solid 1px black; width:200px; height:30px; text-align:center" onclick="ConnectToGame();">RED </div>
+
+        <!-------------->
+
+
+                        <script>
+
+                            //for debug >>>>>>>>>>>
+                            function sendBackMessage() {
+                                var message = document.getElementById("htmlinput").value;
+                                console.log("Sending message to Unity: " + message);
+                                unityInstance.SendMessage("Local", "WebHookSpawn", message);
+                            }
+                            // <<<<<<<<<
+
+                            async function getAccount() {
+                                // connecting metamask
+                                const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+                                const account = accounts[0];
+                                var showAccount = document.getElementById("add");
+                                showAccount.innerHTML = account;
+                                //  const account = "debugger";
+                                ConnectToGame(account);
+                            }
+
+
+                            function ConnectToGame(account) {
+
+                                getaddress(account);
+
+                            }
+
+                            function getaddress(account) {
+
+                                // Unity sends
+                                unityInstance.SendMessage('Local', 'WebHookSpawn', account);
+
+                            }
+
+
+                        </script>
 
 
 </body>
